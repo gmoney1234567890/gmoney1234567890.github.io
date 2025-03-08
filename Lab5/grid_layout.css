@@ -1,0 +1,130 @@
+/* add your css styles here */
+* {
+    border: 1px solid rgb(22, 21, 21);
+    background: rgba(137, 135, 135, 0.1);
+    }
+    
+    body {
+        display: grid;
+        grid-template-columns: 300px 300px;
+        }
+    
+/* Equal columns */
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns, each taking 50%
+    */
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "navbar navbar" /* Navbar spans full width */
+        "sidebar main" /* Sidebar left, main content right */
+        "sidebar main" /* Repeated for height */
+        "footer footer" /* Footer spans full width */
+        }
+
+    .nav {
+            grid-area: navbar;
+            }
+            .sidebar {
+            grid-area: sidebar;
+            }
+            .main {
+            grid-area: main;
+            }
+            .footer {
+            grid-area: footer;
+            }
+
+            body {
+                display: grid;
+                grid-template-columns: 200px 1fr;
+                grid-template-areas:
+                "navbar navbar"
+                "sidebar main"
+                "sidebar main"
+                "footer footer"
+                }
+
+                body {
+                    min-height: 100vh; /* 100vh = 100% of viewport height */
+                    display: grid;
+                    grid-template-columns: 200px 1fr;
+                    grid-template-areas:
+                    "navbar navbar"
+                    "sidebar main"
+                    "sidebar main"
+                    "footer footer"
+                    }
+
+
+
+                    .nav {
+                        grid-area: navbar;
+                        background-color: darkgray;
+                        color: white;
+                        padding: 2em; /* 2em = 2x font size for more spacious header */
+                        }
+                        .footer {
+                        grid-area: footer;
+                        background-color: darkgray;
+                        color: white;
+                        padding: 1em; /* 1em = 1x font size for standard footer spacing */
+                        }
+
+                        .nav {
+                            top: 0;
+                            position: sticky;
+                            grid-area: navbar;
+                            background-color: darkgray;
+                            color: white;
+                            padding: 2em;
+                            }
+
+                            .sidebar {
+                                top: 0;
+                                position: sticky;
+                                grid-area: sidebar;
+                                }
+
+                                .sidebar {
+                                    top: 0;
+                                    position: sticky;
+                                    align-self: start;
+                                    grid-area: sidebar;
+                                    }
+
+                                    .sidebar {
+                                        top: 84px; /* Navbar height from Chrome Dev Tools */
+                                        position: sticky;
+                                        align-self: start;
+                                        grid-area: sidebar;
+                                        }
+
+                                        .sidebar {
+                                            height: calc(100vh - 136px); /* Subtract navbar (84px) and footer (52px)
+                                            */
+                                            top: 84px;
+                                            position: sticky;
+                                            align-self: start;
+                                            grid-area: sidebar;
+                                            }
+
+                                            @media (max-width: 768px) {
+                                                /* Change from two columns (200px 1fr) to single column */
+                                                body {
+                                                grid-template-columns: 1fr; /* Single column taking full width */
+                                                }
+                                                .nav {
+                                                display: none;
+                                                }
+                                                .sidebar {
+                                                display: none;
+                                                }
+                                                .footer {
+                                                display: none;
+                                                }
+                                                }
